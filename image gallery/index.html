@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - Code Alpha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <h1>Zainab's image gallery</h1>
+<div class="img-gallery">
+    <img src="images/pic1.jpg.jpg">
+    <img src="images/pic2.jpg.jpg">
+    <img src="images/pic3.jpg.jpeg">
+    <img src="images/pic4.jpg.jpeg">
+    <img src="images/pic5.jpg.jpeg">
+    <img src="images/pic6.jpg.jpeg">
+    <img src="images/pic7.jpg.jpeg">
+    <img src="images/pic8.jpg.jpeg">
+    <img src="images/pic9.jpg.jpeg">
+    <img src="images/pic10.jpg.jpeg">
+    <img src="images/pic11.jpg.jpeg">
+    <img src="images/pic12.jpg.jpeg">
+
+
+</div>
+
+<div class="full-img" id="full-img">
+    <img id="full-img-src" src="" alt="Full Image">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.querySelectorAll('.img-gallery img');
+    const fullImgContainer = document.getElementById('full-img');
+    const fullImg = document.getElementById('full-img-src');
+
+    gallery.forEach(img => {
+        img.addEventListener('click', () => {
+            fullImg.src = img.src;
+            fullImgContainer.classList.add('show');
+        });
+    });
+
+    fullImgContainer.addEventListener('click', () => {
+        fullImgContainer.classList.remove('show');
+    });
+});
+
+</script>
